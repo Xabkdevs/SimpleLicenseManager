@@ -1,6 +1,6 @@
-# SahelLicenseManager
+# SimpleLicenseManager
 
-A Laravel 11 REST API for managing software licenses for the SAHEL FASTFOOD desktop application.
+A Laravel 11 REST API for managing software licenses for desktop applications.
 
 ## Features
 
@@ -17,7 +17,7 @@ A Laravel 11 REST API for managing software licenses for the SAHEL FASTFOOD desk
 
 ```bash
 # Navigate to project directory
-cd SahelLicenseManager
+cd SimpleLicenseManager
 
 # Install dependencies
 composer install
@@ -43,7 +43,7 @@ Update your `.env` file with your database credentials:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=sahel_license_manager
+DB_DATABASE=Simple_license_manager
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
@@ -90,7 +90,7 @@ php artisan license:generate 1000
 curl -X POST http://localhost:8000/api/register \
   -H "Content-Type: application/json" \
   -d '{
-    "license_key": "SAHEL-ABCD-EFGH-IJKL-MNOP",
+    "license_key": "Simple-ABCD-EFGH-IJKL-MNOP",
     "first_name": "John",
     "last_name": "Doe",
     "brand_name": "Johns Restaurant",
@@ -108,13 +108,13 @@ curl -X POST http://localhost:8000/api/register \
 ```bash
 curl -X POST http://localhost:8000/api/activate \
   -H "Content-Type: application/json" \
-  -d '{"license_key": "SAHEL-ABCD-EFGH-IJKL-MNOP"}'
+  -d '{"license_key": "Simple-ABCD-EFGH-IJKL-MNOP"}'
 ```
 
 ### 3. Validate License
 
 ```bash
-curl -X GET http://localhost:8000/api/validate/SAHEL-ABCD-EFGH-IJKL-MNOP
+curl -X GET http://localhost:8000/api/validate/Simple-ABCD-EFGH-IJKL-MNOP
 ```
 
 ## Database Schema
@@ -136,7 +136,7 @@ curl -X GET http://localhost:8000/api/validate/SAHEL-ABCD-EFGH-IJKL-MNOP
 ## Files Structure
 
 ```
-SahelLicenseManager/
+SimpleLicenseManager/
 ├── app/
 │   ├── Console/Commands/
 │   │   └── GenerateLicenseKeys.php          # License key generator
@@ -151,7 +151,7 @@ SahelLicenseManager/
 ├── routes/
 │   └── api.php                             # API routes
 ├── API_DOCUMENTATION.md                    # Complete API documentation
-├── SahelLicenseManager.postman_collection.json  # Postman collection
+├── SimpleLicenseManager.postman_collection.json  # Postman collection
 ├── test_api.php                            # PHP test script
 └── README.md                               # This file
 ```
@@ -159,7 +159,7 @@ SahelLicenseManager/
 ## Testing
 
 ### Using Postman
-1. Import `SahelLicenseManager.postman_collection.json` into Postman
+1. Import `SimpleLicenseManager.postman_collection.json` into Postman
 2. Update the `base_url` variable to your API URL
 3. Run the collection to test all endpoints
 
@@ -211,4 +211,4 @@ For technical support or questions about the API, please refer to the complete d
 
 ## License
 
-This project is proprietary software for SAHEL FASTFOOD application license management.
+This project is proprietary software for Simple licence application license management.
